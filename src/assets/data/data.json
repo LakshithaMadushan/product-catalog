@@ -1,0 +1,42 @@
+[
+	{
+		"id": 1,
+		"image": "images/image_1.jpg",
+		"product": "Tank Top",
+		"objective": "Finding perfect t-shirt",
+		"price": 1123.5,
+		"description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur, vitae, explicabo? Incidunt facere, natus soluta dolores iusto! Molestiae expedita veritatis nesciunt doloremque sint asperiores fuga voluptas, distinctio, aperiam, ratione dolore.",
+		"inCart": false,
+		"quantity": 1
+	},
+	{
+		"id": 2,
+		"image": "images/image_2.jpg",
+		"product": "Corater",
+		"objective": "Finding perfect products",
+		"price": 520.2,
+		"description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur, vitae, explicabo? Incidunt facere, natus soluta dolores iusto! Molestiae expedita veritatis nesciunt doloremque sint asperiores fuga voluptas, distinctio, aperiam, ratione dolore.",
+		"inCart": false,
+		"quantity": 1
+	},
+	{
+		"id": 3,
+		"image": "images/image_3.jpg",
+		"product": "Polo Shirt",
+		"objective": "Finding perfect products",
+		"price": 1152.0,
+		"description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur, vitae, explicabo? Incidunt facere, natus soluta dolores iusto! Molestiae expedita veritatis nesciunt doloremque sint asperiores fuga voluptas, distinctio, aperiam, ratione dolore.",
+		"inCart": false,
+		"quantity": 1
+	},
+	{
+		"id": 4,
+		"image": "images/image_4.jpg",
+		"product": "T-Shirt Mockup",
+		"objective": "Finding perfect products",
+		"price": 1550.6,
+		"description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur, vitae, explicabo? Incidunt facere, natus soluta dolores iusto! Molestiae expedita veritatis nesciunt doloremque sint asperiores fuga voluptas, distinctio, aperiam, ratione dolore.",
+		"inCart": false,
+		"quantity": 1
+	}
+]

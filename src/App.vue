@@ -1,31 +1,70 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
+    <Header v-bind:inCartItemsCount="getInCartItems" @searchString="searchItems"/>
+    <div class="site-section">
+      <div class="container">
+        <router-view v-bind:products="products" @addToCartItemId="addToCart"/>
+      </div>
     </div>
-    <router-view />
+    <Footer/>
   </div>
 </template>
 
+<script>
+import Header from "./components/Header.vue";
+import Footer from "./components/Footer.vue";
+import Products from "./assets/data/data.json";
+
+export default {
+  name: "app",
+  data() {
+    return {
+      products: []
+    };
+  },
+  components: { Header, Footer },
+  methods: {
+    addToCart(id) {
+      this.products.forEach(product => {
+        if (product.id == id) {
+          product.inCart = true;
+          product.quantity = 1;
+        }
+      });
+    },
+    setDataToClientStorage(products) {
+      localStorage.setItem("products", JSON.stringify(products));
+    },
+    getProducts() {
+      return localStorage.getItem("products") != undefined
+        ? JSON.parse(localStorage.getItem("products"))
+        : Products;
+    },
+    searchItems(searchString) {
+      console.log(searchString);
+    }
+  },
+  computed: {
+    getInCartItems() {
+      this.setDataToClientStorage(this.products);
+      return this.products.filter(product => {
+        return product.inCart == true;
+      }).length;
+    }
+  },
+  created() {
+    if (localStorage.getItem("products") == undefined) {
+      this.setDataToClientStorage(Products);
+    }
+    this.products = this.getProducts();
+  }
+};
+</script>
+
+
 <style>
-#app {
-  font-family: "Avenir", Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
-#nav {
-  padding: 30px;
-}
-
-#nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
-
-#nav a.router-link-exact-active {
-  color: #42b983;
-}
+@import "https://fonts.googleapis.com/css?family=Mukta:300,400,700";
+@import "./assets/fonts/icomoon/style.css";
+@import "./assets/css/bootstrap.min.css";
+@import "./assets/css/style.css";
 </style>
