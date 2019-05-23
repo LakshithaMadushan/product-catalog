@@ -1,4 +1,4 @@
-# product-catalog
+# product-catalog-(vue.js)
 
 ## Project setup
 ```
